@@ -179,3 +179,7 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+industry_overview.md
+predictive_maintenance_full_pipeline.ipynb
+PROJECT_SUMMARY.md
