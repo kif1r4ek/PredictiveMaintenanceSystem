@@ -5,7 +5,9 @@ services:
     image: postgres:17-alpine
     container_name: pm_postgres
     ports:
-      - "5432:5432"
+      # На хосте уже занят 5432 (нативный Postgres) — публикуем на 5433.
+      # Внутри docker-сети контейнер по-прежнему слушает 5432 (POSTGRES_HOST=postgres).
+      - "5433:5432"
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
@@ -49,8 +51,9 @@ services:
       - "8000:8000"
     volumes:
       - ./backend:/app
+      - ./models:/app/models:ro
     env_file:
-      - ./backend/.env
+      - .env
     depends_on:
       postgres:
         condition: service_healthy

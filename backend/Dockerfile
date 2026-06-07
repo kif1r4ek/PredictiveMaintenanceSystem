@@ -15,7 +15,11 @@ COPY --from=builder /install /usr/local
 
 COPY . .
 
+RUN chmod +x entrypoint.sh
+
 EXPOSE 8000
 
+# entrypoint прогоняет миграции, затем exec "$@" (CMD ниже)
+ENTRYPOINT ["./entrypoint.sh"]
 CMD ["gunicorn", "main:app", "-k", "uvicorn.workers.UvicornWorker", \
      "-w", "4", "-b", "0.0.0.0:8000", "--access-logfile", "-"]
