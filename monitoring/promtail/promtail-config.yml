@@ -9,12 +9,15 @@ clients:
   - url: http://loki:3100/loki/api/v1/push
 
 scrape_configs:
-  # Системные логи хоста (базовый источник).
-  # Логи Docker-контейнеров будут добавлены в Этапе 9.
-  - job_name: system
-    static_configs:
-      - targets:
-          - localhost
-        labels:
-          job: varlogs
-          __path__: /var/log/*log
+  # Логи Docker-контейнеров через docker service discovery (stdout/stderr).
+  - job_name: docker
+    docker_sd_configs:
+      - host: unix:///var/run/docker.sock
+        refresh_interval: 5s
+    relabel_configs:
+      # Имя контейнера → метка container (без ведущего "/").
+      - source_labels: ["__meta_docker_container_name"]
+        regex: "/(.*)"
+        target_label: container
+      - source_labels: ["__meta_docker_container_log_stream"]
+        target_label: stream

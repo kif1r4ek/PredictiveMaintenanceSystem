@@ -54,6 +54,9 @@ services:
       - ./models:/app/models:ro
     env_file:
       - .env
+    environment:
+      # Агрегация Prometheus-метрик по всем воркерам gunicorn (multiprocess).
+      PROMETHEUS_MULTIPROC_DIR: /tmp/prometheus_multiproc
     depends_on:
       postgres:
         condition: service_healthy
@@ -116,7 +119,8 @@ services:
     container_name: pm_promtail
     volumes:
       - ./monitoring/promtail/promtail-config.yml:/etc/promtail/promtail-config.yml:ro
-      - /var/log:/var/log:ro
+      # Доступ к Docker API для обнаружения контейнеров и чтения их логов.
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     command: -config.file=/etc/promtail/promtail-config.yml
     depends_on:
       - loki

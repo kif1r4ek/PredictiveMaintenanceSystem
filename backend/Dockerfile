@@ -21,5 +21,5 @@ EXPOSE 8000
 
 # entrypoint прогоняет миграции, затем exec "$@" (CMD ниже)
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["gunicorn", "main:app", "-k", "uvicorn.workers.UvicornWorker", \
+CMD ["gunicorn", "main:app", "-c", "gunicorn_conf.py", "-k", "uvicorn.workers.UvicornWorker", \
      "-w", "4", "-b", "0.0.0.0:8000", "--access-logfile", "-"]

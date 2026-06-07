@@ -22,6 +22,9 @@ INFERENCE_DURATION = Histogram(
 FAILURE_PROBABILITY = Gauge(
     "pm_failure_probability",
     "Вероятность отказа последнего предсказания",
+    # В multiprocess (gunicorn -w 4) у Gauge нет «последнего» значения на всех —
+    # берём максимум из последних по воркерам. Вне multiprocess режим игнорируется.
+    multiprocess_mode="max",
 )
 
 
