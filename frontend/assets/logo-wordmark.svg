@@ -1,0 +1,7 @@
+<svg width="280" height="48" viewBox="0 0 280 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Predictive Maintenance">
+  <rect width="48" height="48" rx="10" fill="#1F6FEB"></rect>
+  <path d="M9 28 H18 L22 28 L26 15 L30 35 L33 28 H39" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+  <circle cx="26" cy="15" r="3.4" fill="#E8920C" stroke="#1F6FEB" stroke-width="2"></circle>
+  <text x="62" y="22" font-family="&#39;IBM Plex Sans&#39;, sans-serif" font-size="18" font-weight="700" letter-spacing="-0.01em" fill="#0E1116">Predictive</text>
+  <text x="62" y="40" font-family="&#39;IBM Plex Sans&#39;, sans-serif" font-size="18" font-weight="500" letter-spacing="0.01em" fill="#5A6675">Maintenance</text>
+</svg>

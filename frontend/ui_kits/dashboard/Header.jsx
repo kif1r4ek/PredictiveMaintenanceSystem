@@ -1,0 +1,67 @@
+/* Header — brand, health badge (GET /health), theme toggle. */
+const { useState: useStateH } = React;
+
+function HealthBadge({ health, state }) {
+  const [open, setOpen] = useState(false);
+  let cls = 'health--ok', label = 'Работает', dot = '';
+  if (state === 'loading') { label = 'Проверка…'; cls = 'health--ok'; }
+  else if (state === 'error') { cls = 'health--down'; label = 'Недоступен'; }
+  else if (health) {
+    if (health.status === 'degraded') { cls = 'health--degraded'; label = 'Деградация'; }
+    else { cls = 'health--ok'; label = 'Работает'; dot = 'pulse'; }
+  }
+  const dep = (ok) => (
+    <span className="v" style={{ color: ok ? 'var(--healthy-600)' : 'var(--critical-600)' }}>
+      <Icon name={ok ? 'check-circle' : 'alert-circle'} size={13} />{ok ? 'норма' : 'сбой'}
+    </span>
+  );
+  return (
+    <div style={{ position: 'relative' }} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+      <div className={'health ' + cls}>
+        <span className={'health__dot ' + dot} />
+        {label}
+      </div>
+      {open && health && state === 'done' && (
+        <div className="card" style={{ position: 'absolute', right: 0, top: 38, zIndex: 20, padding: 12, boxShadow: 'var(--shadow-lg)', minWidth: 180 }}>
+          <div className="eyebrow" style={{ marginBottom: 9 }}>Зависимости</div>
+          <div className="health-pop">
+            <div className="health-pop__row"><span className="k gap2"><Icon name="cpu" size={13} />Модели</span>{dep(health.models)}</div>
+            <div className="health-pop__row"><span className="k gap2"><Icon name="database" size={13} />База данных</span>{dep(health.database)}</div>
+            <div className="health-pop__row"><span className="k gap2"><Icon name="server" size={13} />Redis</span>{dep(health.redis)}</div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function ThemeToggle({ theme, onToggle }) {
+  return (
+    <button className="iconbtn" onClick={onToggle} title={theme === 'dark' ? 'Светлая тема' : 'Тёмная тема'}>
+      <Icon name={theme === 'dark' ? 'sun' : 'moon'} size={16} />
+    </button>
+  );
+}
+
+function Header({ health, healthState, theme, onToggleTheme }) {
+  return (
+    <header className="appbar">
+      <div className="appbar__brand">
+        <img className="appbar__logo" src="logo-mark.svg" alt="" />
+        <div className="appbar__title">
+          Предиктивное обслуживание
+          <small>Прогноз отказов</small>
+        </div>
+      </div>
+      <nav className="appbar__nav" style={{ marginLeft: 18 }}>
+        <a className="is-active">Прогноз</a>
+        <a>История</a>
+        <a>Модели</a>
+      </nav>
+      <div className="appbar__spacer" />
+      <HealthBadge health={health} state={healthState} />
+      <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+    </header>
+  );
+}
+window.Header = Header;

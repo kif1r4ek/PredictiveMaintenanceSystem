@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+
+# vite / typescript build artifacts
+.vite/
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+
+# local env overrides
+.env
+.env.*.local
+*.local
+
+# logs
+*.log

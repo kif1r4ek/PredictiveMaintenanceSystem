@@ -1,0 +1,5 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Predictive Maintenance mark, monochrome">
+  <rect width="48" height="48" rx="10" fill="#0E1116"></rect>
+  <path d="M9 28 H18 L22 28 L26 15 L30 35 L33 28 H39" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+  <circle cx="26" cy="15" r="3.4" fill="#E7ECF2"></circle>
+</svg>

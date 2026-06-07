@@ -1,0 +1,19 @@
+<!-- @dsCard group="Components" viewport="700x170" name="Status badges & chips" subtitle="Health, verdict, failure-type" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>body{margin:0;font-family:var(--font-sans);background:var(--white);padding:24px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.h{display:inline-flex;align-items:center;gap:8px;height:30px;padding:0 12px;border:1px solid var(--slate-200);border-radius:999px;background:var(--canvas);font-size:13px;font-weight:500;color:var(--fg2)}
+.d{width:8px;height:8px;border-radius:50%}
+.chip{display:inline-flex;align-items:center;gap:7px;height:26px;padding:0 11px;border-radius:999px;font-size:13px;font-weight:500}
+.chip .dd{width:7px;height:7px;border-radius:50%;background:currentColor}
+.cell{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500}</style></head>
+<body>
+<span class="h"><span class="d" style="background:#1E9E6A;box-shadow:0 0 0 3px #E6F6EE"></span>Работает</span>
+<span class="h"><span class="d" style="background:#C77A0A;box-shadow:0 0 0 3px #FBF0DC"></span>Деградация</span>
+<span class="h"><span class="d" style="background:#D7263D;box-shadow:0 0 0 3px #FCE8EB"></span>Недоступен</span>
+<span class="chip" style="background:#E6F6EE;color:#15784F"><span class="dd"></span>Без отказа</span>
+<span class="chip" style="background:#FCE8EB;color:#B01B30"><span class="dd"></span>Отказ по мощности</span>
+<span class="cell" style="color:#15784F"><span class="d" style="background:#1E9E6A"></span>Норма</span>
+<span class="cell" style="color:#B01B30"><span class="d" style="background:#D7263D"></span>Отказ</span>
+</body></html>

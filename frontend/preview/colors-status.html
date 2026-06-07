@@ -1,0 +1,20 @@
+<!-- @dsCard group="Colors" viewport="700x190" name="Status — equipment health" subtitle="Healthy · Warning · Critical · Offline" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>body{margin:0;font-family:var(--font-sans);background:var(--white);padding:22px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.col .head{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.dot{width:11px;height:11px;border-radius:50%}
+.col .t{font-size:13px;font-weight:600;color:var(--fg1)}
+.bar{height:30px;border-radius:6px;display:flex;align-items:center;padding:0 10px;font-family:var(--font-mono);font-size:11px;margin-bottom:6px}
+.solid{color:#fff}.tint{}</style></head>
+<body>
+<div class="col"><div class="head"><span class="dot" style="background:#1E9E6A"></span><span class="t">Healthy</span></div>
+<div class="bar solid" style="background:#1E9E6A">#1E9E6A</div><div class="bar" style="background:#E6F6EE;color:#15784F">50 surface</div><div style="font-size:11px;color:var(--fg4)">Норма · no failure</div></div>
+<div class="col"><div class="head"><span class="dot" style="background:#C77A0A"></span><span class="t">Warning</span></div>
+<div class="bar solid" style="background:#C77A0A">#C77A0A</div><div class="bar" style="background:#FBF0DC;color:#A6620A">50 surface</div><div style="font-size:11px;color:var(--fg4)">Degraded · near threshold</div></div>
+<div class="col"><div class="head"><span class="dot" style="background:#D7263D"></span><span class="t">Critical</span></div>
+<div class="bar solid" style="background:#D7263D">#D7263D</div><div class="bar" style="background:#FCE8EB;color:#B01B30">50 surface</div><div style="font-size:11px;color:var(--fg4)">Отказ · failure</div></div>
+<div class="col"><div class="head"><span class="dot" style="background:#8A95A3"></span><span class="t">Offline</span></div>
+<div class="bar solid" style="background:#8A95A3">#8A95A3</div><div class="bar" style="background:#EEF1F4;color:#5A6675">50 surface</div><div style="font-size:11px;color:var(--fg4)">No signal · unknown</div></div>
+</body></html>

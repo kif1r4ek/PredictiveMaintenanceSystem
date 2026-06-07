@@ -1,0 +1,22 @@
+<!-- @dsCard group="Components" viewport="700x230" name="Inputs & segmented" subtitle="Mono field, focus, error, product-type toggle" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>body{margin:0;font-family:var(--font-sans);background:var(--white);padding:22px 24px;display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}
+.lab{display:flex;justify-content:space-between;font-size:13px;font-weight:500;color:var(--fg2);margin-bottom:6px}
+.lab .r{font-family:var(--font-mono);font-size:11px;color:var(--fg4)}
+.inp{height:38px;padding:0 12px;width:100%;font-family:var(--font-mono);font-size:15px;color:var(--fg1);background:var(--canvas);border:1px solid var(--slate-200);border-radius:6px;box-sizing:border-box}
+.inp.focus{border-color:var(--blue-600);box-shadow:0 0 0 3px rgba(31,111,235,.22);background:#fff}
+.inp.err{border-color:var(--critical-600);box-shadow:0 0 0 3px var(--critical-50);background:#fff}
+.e{font-size:12px;color:var(--critical-600);margin-top:5px}
+.seg{display:grid;grid-template-columns:1fr 1fr 1fr;padding:3px;background:var(--slate-100);border:1px solid var(--slate-200);border-radius:6px}
+.seg b{height:30px;border-radius:4px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:13px;font-weight:500;color:var(--fg3)}
+.seg b.on{background:#fff;color:var(--fg1);box-shadow:var(--shadow-sm)}
+.seg .t{font-family:var(--font-mono);font-weight:600}</style></head>
+<body>
+<div><div class="lab"><span>Скорость вращения</span><span class="r">1168–2886 об/мин</span></div><input class="inp" value="1551"></div>
+<div><div class="lab"><span>Крутящий момент</span><span class="r">3.8–76.6 Н·м</span></div><div class="inp focus">42.8</div></div>
+<div><div class="lab"><span>Темп. процесса</span><span class="r">305–314 K</span></div><div class="inp err">304.2</div><div class="e">Допустимо от 305 до 314 K</div></div>
+<div><div class="lab"><span>Категория продукта</span><span class="r">вариант качества</span></div>
+<div class="seg"><b class="t">L Низкий</b><b class="on"><span class="t">M</span> Средний</b><b class="t">H Высокий</b></div></div>
+</body></html>

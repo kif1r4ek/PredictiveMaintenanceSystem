@@ -1,0 +1,18 @@
+<!-- @dsCard group="Components" viewport="700x150" name="Buttons" subtitle="Primary · ghost · loading · disabled" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>body{margin:0;font-family:var(--font-sans);background:var(--white);padding:30px 24px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.btn{height:40px;padding:0 18px;border-radius:6px;border:1px solid transparent;font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+.primary{background:var(--blue-600);color:#fff}
+.ghost{background:var(--white);border-color:var(--slate-200);color:var(--fg2)}
+.dis{background:var(--blue-600);color:#fff;opacity:.55}
+.spin{width:15px;height:15px;border-radius:50%;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;animation:s .7s linear infinite}
+@keyframes s{to{transform:rotate(360deg)}}
+svg{width:16px;height:16px}</style></head>
+<body>
+<button class="btn primary"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>Predict failure</button>
+<button class="btn ghost">Load example</button>
+<button class="btn primary"><span class="spin"></span>Predicting…</button>
+<button class="btn dis">Disabled</button>
+</body></html>

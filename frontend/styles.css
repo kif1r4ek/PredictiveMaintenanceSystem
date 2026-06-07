@@ -1,0 +1,4 @@
+/* Predictive Maintenance — design system entry point.
+   Consumers: link this single file. It pulls in all foundation tokens,
+   type classes, and the Google Fonts @import (IBM Plex Sans + Mono). */
+@import url('./colors_and_type.css');
