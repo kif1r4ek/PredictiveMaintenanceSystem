@@ -181,6 +181,16 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 
+# OS / editor junk
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+
 industry_overview.md
 predictive_maintenance_full_pipeline.ipynb
 PROJECT_SUMMARY.md
